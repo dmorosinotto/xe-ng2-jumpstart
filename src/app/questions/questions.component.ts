@@ -3,6 +3,7 @@ import { ActivatedRoute } from '@angular/router';
 
 import { QuestionstoreService, Question } from './index';
 import { AnswerComponent } from './answer.component';
+import { CountPipe } from '../shared';
 
 @Component({
   moduleId: module.id,
@@ -10,7 +11,8 @@ import { AnswerComponent } from './answer.component';
   templateUrl: 'questions.component.html',
   styleUrls: ['questions.component.css'],
   providers: [ QuestionstoreService ],
-  directives: [ AnswerComponent ]
+  directives: [ AnswerComponent ],
+  pipes: [ CountPipe ]
 })
 export class QuestionsComponent implements OnInit {
   questions: Question[];
