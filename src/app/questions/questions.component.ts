@@ -7,10 +7,15 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['questions.component.css']
 })
 export class QuestionsComponent implements OnInit {
-
+  questions;
   constructor() {}
 
   ngOnInit() {
+    this.questions = [
+      {req: 'hello'},
+      {req: 'what is SPA'},
+      {req: 'the meaning of life'}
+    ];
   }
 
 }
