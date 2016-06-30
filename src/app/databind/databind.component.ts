@@ -6,18 +6,25 @@ import { Component, OnInit } from '@angular/core';
   template: `
     What is your name? <input [(ngModel)]="name">
     <p *ngIf="name.length>0">
-      Hi, {{name}}!
+      Hi, {{name}}! <button (click)="clear()">X</button>
     </p>
   `,
-  styles: []
+  styles: [
+    'button { color: red; border: 1px solid }'
+  ]
 })
 export class DatabindComponent implements OnInit {
   name: string;
   constructor() {
-    this.name = '';
+    this.clear();
   }
 
   ngOnInit() {
+    // this.name = 'Daniele';
+  }
+
+  clear() {
+    this.name = '';
   }
 
 }
