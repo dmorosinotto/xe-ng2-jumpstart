@@ -15,7 +15,8 @@ export class QuestionsComponent implements OnInit {
   constructor(private svc: QuestionstoreService) {}
 
   ngOnInit() {
-    this.questions = this.svc.getAll();
+    this.svc.getAll()
+        .subscribe(q => this.questions = q);
   }
 
   setResponse(idx: number, resp: string) {

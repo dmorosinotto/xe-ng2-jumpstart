@@ -1,16 +1,17 @@
 import { Injectable } from '@angular/core';
+import { Http } from '@angular/http';
+import { Observable } from 'rxjs/observable';
+import 'rxjs/add/operator/map';
+
 import { Question } from './question';
 
 @Injectable()
 export class QuestionstoreService {
 
-  constructor() {}
+  constructor(private http: Http) {}
 
-  getAll(): Question[] {
-    return [
-      {req: 'hello'},
-      {req: 'what is SPA'},
-      {req: 'the meaning of life'}
-    ];
+  getAll(): Observable<Question[]> {
+    return this.http.get('/data/questions.json')
+                .map(resp => (resp.json() as Question[]) );
   }
 }
