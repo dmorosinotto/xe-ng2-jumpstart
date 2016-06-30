@@ -5,15 +5,17 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-databind',
   template: `
     What is your name? <input [(ngModel)]="name">
-    <p>
-      {{name}}
+    <p *ngIf="name.length>0">
+      Hi, {{name}}!
     </p>
   `,
   styles: []
 })
 export class DatabindComponent implements OnInit {
-
-  constructor() {}
+  name: string;
+  constructor() {
+    this.name = '';
+  }
 
   ngOnInit() {
   }
