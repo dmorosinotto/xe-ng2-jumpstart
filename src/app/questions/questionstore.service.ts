@@ -5,4 +5,11 @@ export class QuestionstoreService {
 
   constructor() {}
 
+  getAll() {
+    return [
+      {req: 'hello'},
+      {req: 'what is SPA'},
+      {req: 'the meaning of life'}
+    ];
+  }
 }
