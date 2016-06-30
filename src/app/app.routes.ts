@@ -6,7 +6,7 @@ import { QuestionsComponent } from './questions';
 
 export const routes: RouterConfig = [
     { path: 'basic', component: DatabindComponent },
-    { path: 'questions', component: QuestionsComponent },
+    { path: 'questions/:name', component: QuestionsComponent },
     { path: '', redirectTo: 'basic' }
 ];
 

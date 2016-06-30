@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   moduleId: module.id,
@@ -8,6 +9,7 @@ import { Component, OnInit } from '@angular/core';
     What is your name? <input [(ngModel)]="name">
     <p *ngIf="name.length>0">
       Hi, {{name}}! <button (click)="clear()">X</button>
+      <button (click)="goto()">GO TO</button>
     </p>
   </div>
   `,
@@ -18,7 +20,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DatabindComponent implements OnInit {
   name: string;
-  constructor() {
+  constructor(private router: Router) {
     this.clear();
   }
 
@@ -28,6 +30,11 @@ export class DatabindComponent implements OnInit {
 
   clear() {
     this.name = '';
+  }
+
+  goto() {
+    // navigate to other page passing route params (:name)
+    this.router.navigate(['/questions', this.name]);
   }
 
 }
