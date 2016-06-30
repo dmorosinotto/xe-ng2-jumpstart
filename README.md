@@ -1,4 +1,8 @@
-# XeNg2Jumpstart
+# XE NG2 JUMP START
+Session **AngularJS 2.0 Confartigianato** 01/07/2016 by Daniele Morosinotto
+[Slides](Morosinotto_Slides_AngularJS_Confartigianato.pdf)
+
+---
 
 This project was generated with [angular-cli](https://github.com/angular/angular-cli) version 1.0.0-beta.8.
 
