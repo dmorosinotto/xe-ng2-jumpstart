@@ -1,11 +1,12 @@
 import { Injectable } from '@angular/core';
+import { Question } from './question';
 
 @Injectable()
 export class QuestionstoreService {
 
   constructor() {}
 
-  getAll() {
+  getAll(): Question[] {
     return [
       {req: 'hello'},
       {req: 'what is SPA'},
