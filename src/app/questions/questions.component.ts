@@ -1,21 +1,19 @@
 import { Component, OnInit } from '@angular/core';
+import { QuestionstoreService, Question } from './index';
 
 @Component({
   moduleId: module.id,
   selector: 'app-questions',
   templateUrl: 'questions.component.html',
-  styleUrls: ['questions.component.css']
+  styleUrls: ['questions.component.css'],
+  providers: [ QuestionstoreService ]
 })
 export class QuestionsComponent implements OnInit {
-  questions;
-  constructor() {}
+  questions: Question[];
+  constructor(private svc: QuestionstoreService) {}
 
   ngOnInit() {
-    this.questions = [
-      {req: 'hello'},
-      {req: 'what is SPA'},
-      {req: 'the meaning of life'}
-    ];
+    this.questions = this.svc.getAll();
   }
 
 }
