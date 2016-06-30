@@ -4,8 +4,9 @@ import { Component, OnInit } from '@angular/core';
   moduleId: module.id,
   selector: 'app-databind',
   template: `
+    What is your name? <input [(ngModel)]="name">
     <p>
-      databind Works!
+      {{name}}
     </p>
   `,
   styles: []
