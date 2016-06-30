@@ -1,6 +1,8 @@
 <h1 class="box">
   {{title}}
 </h1>
-
-<app-databind></app-databind>
-<app-questions></app-questions>
+<nav>
+  <a [routerLink]="['/basic']">Who are you?</a>
+  <a [routerLink]="['/questions']">Feedback</a>
+</nav>
+<router-outlet></router-outlet>
